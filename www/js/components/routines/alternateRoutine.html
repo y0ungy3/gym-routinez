@@ -1,0 +1,34 @@
+<ion-view class="{{color}}" title="{{r.name}}">
+  <div class="bar bar-subheader">
+    <button ng-show="showReorderButton()" ng-init="showReorder = false"
+            class="button button-outline ion-navicon button-stable" ng-click="reorder();"></button>
+    <button on-tap="showTimer()" class="button button-icon icon ion-android-alarm-clock"></button>
+    <h4 class="title">{{r.exercises.length}} total</h4>
+    <button on-tap="addExercise(r.id, r.alternate)" class="button button-icon icon ion-android-add-circle"></button>
+  </div>
+  <ion-content padding="'true'" class="has-header" style="PADDING-TOP: 45px">
+    <h5 style="font-family: 'mvboli'" align="center" ng-if="r.description != null">{{r.description}}</h5>
+
+
+    <ion-list show-reorder="showReorder">
+      <ion-item class="item-icon-right" ng-repeat="exercise in r.exercises">
+        <div style="text-overflow: ellipsis; font-size: 14px; overflow: hidden;" class="item-checkbox">
+          <label class="checkbox" ng-model="a" on-tap="updateNumExercise(a)">
+            <input type="checkbox">
+          </label>
+          {{exercise.name}}
+        </div>
+
+        <ion-option-button class="button-energized" on-tap="editExercise($index, r.id, r.alternate);  $event.stopPropagation();">
+          Edit
+        </ion-option-button>
+        <ion-option-button class="button-assertive" on-tap="r.exercises.splice($index, 1);  $event.stopPropagation();">
+          Delete
+        </ion-option-button>
+        <span style="float:right; font-size: 14px">{{exercise.reps != null ? 'Reps: ' : null}} {{exercise.reps}}  &nbsp; {{exercise.weight}} {{exercise.weight != null ? 'lb' : null}} </span>
+        <ion-reorder-button class="ion-navicon" on-reorder="moveItem(exercise, $fromIndex, $toIndex)"></ion-reorder-button>
+      </ion-item>
+      <div class="col col-80"></div>
+    </ion-list>
+  </ion-content>
+</ion-view>

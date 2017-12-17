@@ -1,0 +1,22 @@
+<ion-view title="{{myExercise.name}}" class="{{color}}">
+  <div class="bar bar-subheader">
+    <h4 ng-show="showSets" class="title">{{displaySets}} set(s)</h4>
+    <h4 align="center" ng-show="showRest"> {{restCounter}}(s) rest  </h4>
+  </div>
+  <ion-content padding="'true'" class="has-header" style="PADDING-TOP: 50px">
+    <h5 style="font-family: 'mvboli'" align="center" ng-if="myExercise.description != null">{{myExercise.description}}</h5>
+
+    <div ng-repeat="a in getSets() track by $index">
+      <ion-checkbox ng-model="checked" ng-click="updateSets(checked)">{{myExercise.reps}} reps each</ion-checkbox>
+      <div class="col col-80"></div>
+    </div>
+
+    <h5>Amount lifted (lbs):<div style="padding-top: 5px">
+      <label class="item item-input">
+        <input ng-model="myExercise.weight" type="number" min="0" placeholder="0">
+      </label>
+      </div>
+    </h5>
+
+  </ion-content>
+</ion-view>

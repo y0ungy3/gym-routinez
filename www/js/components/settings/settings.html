@@ -1,0 +1,28 @@
+<ion-view title="Settings" hide-back-button="true">
+  <ion-content padding="'true'" class="has-header">
+    <p style="font-family: segoeUISemibold">BackGround:</p>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Color
+        </div>
+        <select ng-model="color" ng-change="getSelectVal(color)">
+          <option>Blue</option>
+          <option>Cyan</option>
+          <option>Lime</option>
+          <option>Red</option>
+          <option>Pink</option>
+          <option>Yellow</option>
+          <option>Violet</option>
+          <option>White</option>
+        </select>
+      </label>
+    </div>
+
+    <p align="center" style="font-family: segoeUISemibold; font-size: 12px">Any changes including: background colors or updating a routine/exercise will clear all check boxes that you've checked on exercises.</p>
+    <button class="button button-block button-positive" on-tap="save()">
+      Save
+    </button>
+
+  </ion-content>
+</ion-view>

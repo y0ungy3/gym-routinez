@@ -1,0 +1,25 @@
+<ion-view title="Add Routine" cache-view="false">
+  <ion-content padding="false" class="has-header">
+    <div name= "routineForm" class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label, add" >Routine Name</span>
+        <input name="routineName" ng-model="r.name" type="text" ng-minlength ="1" placeholder="Monday">
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label, add">Description (optional)</span>
+        <input ng-model="r.description" type="text" placeholder="focus on legs">
+      </label>
+    </div>
+
+    <ion-toggle class="add" ng-model = "alternate" ng-change="toggleChange(alternate)" toggle-class="toggle-calm">Fast Alternate Mode</ion-toggle>
+
+
+    <div class = "padding">
+      <div class="button-bar">
+      <a class="button button-positive button-block" ng-disabled= "!(!!r.name)" on-tap="save()">Add</a>
+      <a href="#/routines" class="button button-assertive button-block ">Cancel</a>
+    </div>
+    </div>
+    </ion-content>
+</ion-view>

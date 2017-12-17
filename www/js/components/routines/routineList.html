@@ -1,0 +1,26 @@
+<ion-view cache-view="false" class="{{color}}" title="Gym Routinez" hide-back-button="true">
+  <div class="bar bar-subheader">
+    <button ng-show="showReorderButton()" ng-init="showReorder = false" class="button button-outline ion-navicon button-stable" ng-click="reorder();"></button>
+    <button on-tap="gotoSettings()" class="button button-icon icon ion-gear-a"></button>
+    <button on-tap="showTimer()" class="button button-icon icon ion-android-alarm-clock"></button>
+    <button on-tap="gotoAddRoutine()" class="button button-icon icon ion-android-add-circle"></button>
+  </div>
+
+  <ion-content padding="'true'" class="has-header" style="PADDING-TOP: 50px">
+    <p ng-if="allRoutines.length != 0" style="color: #4A4A4A; font-family: 'mvboli' " align="center">Tap one to add exercises</p>
+
+    <p ng-if="allRoutines.length == 0" style="color: #4A4A4A; font-family: 'mvboli'" align="center">Tap (+) icon to add a routine! </p>
+
+    <ion-list show-reorder="showReorder">
+      <ion-item on-tap="view(routine.id, routine.alternate); $event.stopPropagation();" ng-repeat="routine in allRoutines">{{routine.name}}
+        <ion-option-button class="button-energized" on-tap="editRoutine(routine.id);  $event.stopPropagation();">Edit
+        </ion-option-button>
+        <ion-option-button class="button-assertive" on-tap="allRoutines.splice($index, 1);  $event.stopPropagation();">
+          Delete
+        </ion-option-button>
+        <ion-reorder-button class="ion-navicon" on-reorder="moveItem(routine, $fromIndex, $toIndex)"></ion-reorder-button>
+      </ion-item>
+    </ion-list>
+
+    </ion-content>
+</ion-view>

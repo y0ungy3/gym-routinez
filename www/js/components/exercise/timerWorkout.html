@@ -1,0 +1,15 @@
+<ion-view class="timerBackground" title="{{myExercise.name}}" hide-back-button="true">
+  <div class="bar bar-subheader">
+    <h4 ng-show="showSets" class="title">{{displaySets}} set(s)</h4>
+    <h4 align="center" ng-show="showRest"> {{restCounter}}(s) rest  </h4>
+  </div>
+  <ion-content padding="'true'" class="has-header" style="PADDING-TOP: 45px">
+    <div align="center">
+      <div class="numberCircle">{{counter}}</div>
+    </div>
+    <h5 align="center">{{myExercise.description}}</h5>
+    <a ng-disabled = "disableStart" on-tap="startTimer()" class="button button-calm button-block ">Start</a>
+    <a on-tap="finish()" class="button button-assertive button-block ">Finish</a>
+  </ion-content>
+</ion-view>
+

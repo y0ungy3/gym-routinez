@@ -1,0 +1,9 @@
+<ion-view title="Timer" hide-back-button="true">
+  <ion-content class="stopwatch" padding="'true'" class="has-header" style="PADDING-TOP: 45px">
+    <div align="center">
+      <div>{{counter | secondsToDateTime | date: 'HH:mm:ss'}}</div>
+    </div>
+    <a on-tap="finish()" class="button button-assertive button-block ">Stop</a>
+  </ion-content>
+</ion-view>
+

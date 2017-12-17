@@ -1,0 +1,41 @@
+<ion-view cache-view="false" title="Edit Exercise">
+  <ion-content padding="true" class="has-header">
+    <div class="list, add">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label, add" >Exercise Name</span>
+        <input ng-model="e.name" type="text" placeholder="sit ups">
+      </label>
+
+
+      <div class="col col-80"></div>
+
+      <h6 style="color:grey" align="center">Optionals:</h6>
+      <ion-toggle class="add" ng-model="repsInput" ng-click="timerInput = false; showRepsInput()" toggle-class="toggle-calm" >Number of Reps</ion-toggle class="add">
+
+      <label ng-if="repsInput == true" class="item item-input">
+        <input ng-model="e.reps" type="number" min="0" placeholder="25">
+      </label>
+
+      <div class="col col-80"></div>
+
+      <ion-toggle class="add" ng-model="timerInput" ng-click="repsInput = false; showTimerInput()" toggle-class="toggle-calm" >Timer (seconds)</ion-toggle class="add">
+
+      <label ng-if="timerInput == true" class="item item-input">
+        <input ng-model="e.timer" type="number" min="0" placeholder="60">
+      </label>
+
+      <div class="col col-80"></div>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label, add" >Weight (lbs)</span>
+        <input ng-model="e.weight" type="number" min="1" placeholder="30">
+      </label>
+    </div>
+
+
+    <div class="button-bar">
+      <a class="button button-positive button-block" ng-disabled="!(!!e.name && (!!e.reps || !!e.timer))" on-tap="update(true)">Update</a>
+      <a on-tap="cancel()" class="button button-assertive button-block ">Cancel</a>
+    </div>
+  </ion-content>
+</ion-view>

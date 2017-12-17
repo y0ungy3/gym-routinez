@@ -1,0 +1,93 @@
+/*-------------------MY OWN CSS-------------------------------------------
+/*use for displaying the circle behind the timer for workout timer */
+.timerBackground {
+  background: white;
+}
+
+@font-face {
+  font-family: 'mvboli';
+  src:url('../fonts/mvboli.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'segoeUISemibold';
+  src: url('../fonts/SegoeUISemibold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+.viewExercise {
+  background: #111111;
+}
+
+.add {
+  color: #007aff;
+}
+
+.stopwatch {
+  background: black;
+  color: white;
+  text-align: center;
+  font: 58px sans-serif;
+}
+
+.numberCircle {
+  border-radius: 150%;
+
+  width: 200px;
+  height: 125px;
+  padding: 1px;
+
+  background: white;
+  border: 2px solid lightgray;
+  color: black;
+  text-align: center;
+
+  font: 100px sans-serif;
+}
+
+
+/*All the background colors */
+.Blue {
+  background-color: dodgerblue;
+  font-family: "segoeUISemibold";
+}
+
+.Cyan {
+  background-color: cyan;
+  font-family: "segoeUISemibold";
+}
+
+.Lime {
+  background-color: greenyellow;
+  font-family: "segoeUISemibold";
+}
+
+.Yellow {
+  background-color: yellow;
+  font-family: "segoeUISemibold";
+}
+
+.Pink {
+  background-color: pink;
+  font-family: "segoeUISemibold";
+}
+
+.White {
+  background-color: #FFFFFF;
+  font-family: "segoeUISemibold";
+}
+
+.Red {
+  background-color: crimson;
+  font-family: "segoeUISemibold";
+}
+
+.Violet {
+  background-color: violet;
+  font-family: "segoeUISemibold";
+}
+
+

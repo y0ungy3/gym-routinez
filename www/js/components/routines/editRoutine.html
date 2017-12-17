@@ -1,0 +1,22 @@
+<ion-view title="Edit Routine">
+  <ion-content padding="false" class="has-header">
+    <form name="routineForm" class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Routine Name</span>
+        <input ng-model="r.name" type="text">
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Description (optional)</span>
+        <input ng-model="r.description" type="text">
+      </label>
+
+      <div class="padding">
+        <div class="button-bar">
+          <a class="button button-positive button-block" on-tap="save()" type="submit">Update</a>
+          <a href="#/routines" class="button button-assertive button-block" type="reset">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
